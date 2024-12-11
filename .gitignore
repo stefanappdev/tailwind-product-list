@@ -23,5 +23,15 @@ design/
 *.md
 
 #ignore preview and json data
-data.json
+*.json
 preview.jpg
+
+#tailwind config file
+tailwind.config.js
+
+
+#ignore node modules
+node_modules/
+
+#ignore src
+src/
