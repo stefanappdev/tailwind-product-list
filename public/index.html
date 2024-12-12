@@ -13,56 +13,150 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+	*{padding:0; margin:0; -moz-box-sizing:0; box-sizing:0;}
+	
   </style>
 </head>
-<body>
+<body class="p-3">
 
-  <h2 class="text-green-500 text-3xl underline">Desserts</h2>
+ <style>
+ .desert-menu-item{ margin-top:20px; margin-bottom:20px;}
+ 
+ </style>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+ <h1 class="text-3xl text-center mb-3 mt-3 font-bold">Desserts</h1>
+ 
+<div id="desert-menu" class="flex items-center justify-center flex-col">
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+  
+	 <div class="desert-menu-item flex flex-col"> 
+	 
+	 <img src="./images/image-waffle-mobile.jpg" alt="Waffle with Berries"/>
+	  <span>Waffle with Berries</span>
+	  <span>Waffle</span>
+	  <span class="text-orange-600">
+	  <strong>$6.50</strong>
+	  </span>
+			  <button class=" inline-flex border-2 border-zinc-500 border-solid px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+			  </button>
+	  </div>
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
+	<div class="desert-menu-item flex flex-col"> 
+		<img src="./images/image-creme-brulee-mobile.jpg" alt="Vanilla Bean Crème Brûlée"/>
+		  <span>Vanilla Bean Crème Brûlée</span>
+		  <span>Crème Brûlée</span>
+		  <span class="text-orange-600">
+			 <strong>$7.00 </strong>
+		  </span>
+		
+					<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	  </div>
+	  
+	  
+	 <div class="desert-menu-item flex flex-col"> 
+		  <img src="./images/image-macaron-mobile.jpg" alt="Macaron Mix of Five"/>
+		  <span>Macaron Mix of Five</span>
+		  <span>Macaron</span>
+		  <span class="text-orange-600">
+				<strong>$8.00</strong>
+		  </span>
+				<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	 </div>
 
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
+	<div class="desert-menu-item flex flex-col" > 
+		 <img src="./images/image-tiramisu-mobile.jpg" alt="Classic Tiramisu"/>
+		  <span>Classic Tiramisu</span>
+		  <span>Tiramisu</span>
+		  <span class="text-orange-600">
+			<strong>$5.50</strong>
+		  </span>
+				<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	  </div>
+	  
+	  
+	<div class="desert-menu-item flex flex-col"> 
+		  <img src="./images/image-baklava-mobile.jpg" alt="Pistachio Baklava"/>
+		  <span>Pistachio Baklava</span>
+		  <span>Baklava</span>
+		  <span class="text-orange-600">
+					<strong>$4.00</strong>
+		  </span>
+		   
+				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	 </div>
 
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
 
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
+	<div class="desert-menu-item flex flex-col"> 
+		 <img src="./images/image-meringue-mobile.jpg" alt=""/>
+		  <span>Lemon Meringue Pie</span>
+		  <span>Pie</span>
+		  <span class="text-orange-600">
+				<strong>$5.00</strong>
+		  </span>
+		
+				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+   </div>
 
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
+	<div class="desert-menu-item flex flex-col"> 
+		 <img src="./images/image-cake-mobile.jpg" alt="Red Velvet Cake"/>
+		  <span>Red Velvet Cake</span>
+		  <span>Cake</span>
+		  <span class="text-orange-600">
+		   <strong>$4.50</strong>
+		  </span>
+		
+				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+		  </div>
 
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
+	<div class="desert-menu-item flex flex-col"> 
+		  <img src="./images/image-macaron-mobile.jpg" alt="Salted Caramel Brownie"/>
+		  <span>Salted Caramel Brownie</span>
+		  <span>Brownie</span>
+		  <span class="text-orange-600">
+			<strong>$4.50</strong>
+		 </span>
+				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	 </div>
+
+	<div class="desert-menu-item flex flex-col"> 
+		 <img src="./images/image-panna-cotta-mobile.jpg" alt="Vanilla Panna Cotta"/>
+		  <span>Vanilla Panna Cotta</span>
+		  <span>Panna Cotta</span>
+		  <span class="text-orange-600">
+				<strong>$6.50</strong>
+		  </span>
+		  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+					Add to Cart
+				  </button>
+	  </div>
+
+</div>
+
 
   Your Cart (<!-- Quantity -->)
   Your added items will appear here
