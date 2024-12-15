@@ -33,5 +33,3 @@ tailwind.config.js
 #ignore node modules
 node_modules/
 
-#ignore src
-src/
