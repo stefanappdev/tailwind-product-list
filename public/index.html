@@ -13,14 +13,22 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-	*{padding:0; margin:0; -moz-box-sizing:0; box-sizing:0;}
 	
+	
+	*{padding:0; margin:0; -moz-box-sizing:0; box-sizing:0;}
+
   </style>
 </head>
 <body class="p-3">
 
  <style>
  .desert-menu-item{ margin-top:20px; margin-bottom:20px;}
+ @media screen and (max-width:640px){
+	.add-to-cart-btn{
+		transform:translateX(100px) translateY(-20px);
+	
+	}
+ }
  
  </style>
 
@@ -31,139 +39,198 @@
 
   
 	 <div class="desert-menu-item flex flex-col"> 
-	 
-	 <img src="./images/image-waffle-mobile.jpg" alt="Waffle with Berries"/>
-	  <span>Waffle with Berries</span>
-	  <span>Waffle</span>
-	  <span class="text-orange-600">
-	  <strong>$6.50</strong>
-	  </span>
-			  <button class=" inline-flex border-2 border-zinc-500 border-solid px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
+		 
+		<img src="./images/image-waffle-mobile.jpg" class="my-2" alt="Waffle with Berries"/>
+		 <button class="add-to-cart-btn inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
 			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
 				Add to Cart
-			  </button>
+		</button>
+			  
+			  
+		<div class="flex flex-col my-3"> 
+			  <span class="my-1 text-gray-900">Waffle </span>
+			  <span class="my-1 font-bold ">Waffle with Berries</span>
+			  <span class="text-orange-600 my-1 ">
+			  <strong class=" my-1 ">$6.50</strong>
+			  </span>
+		</div>
+			 
 	  </div>
 
-	<div class="desert-menu-item flex flex-col"> 
-		<img src="./images/image-creme-brulee-mobile.jpg" alt="Vanilla Bean Crème Brûlée"/>
-		  <span>Vanilla Bean Crème Brûlée</span>
-		  <span>Crème Brûlée</span>
-		  <span class="text-orange-600">
-			 <strong>$7.00 </strong>
-		  </span>
+	<div class="desert-menu-item  flex flex-col"> 
+		<img class="my-1" src="./images/image-creme-brulee-mobile.jpg" alt="Vanilla Bean Crème Brûlée"/>
 		
-					<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		<button class="add-to-cart-btn inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		</button>
+			  
+			  
+		  <div class="flex flex-col my-3"> 
+			  <span class="my-1 ">Crème Brûlée</span>
+			  <span class="my-1 font-bold text-gray-900">Vanilla Bean Crème Brûlée</span>
+			  <span class="text-orange-600 my-1">
+				 <strong class="my-1">$7.00 </strong>
+			  </span>
+		  </div>
+				
 	  </div>
 	  
 	  
 	 <div class="desert-menu-item flex flex-col"> 
 		  <img src="./images/image-macaron-mobile.jpg" alt="Macaron Mix of Five"/>
-		  <span>Macaron Mix of Five</span>
-		  <span>Macaron</span>
-		  <span class="text-orange-600">
-				<strong>$8.00</strong>
-		  </span>
-				<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		  
+		  <button class="add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		  </button>
+		  
+		 <div class="flex flex-col my-3"> 
+			  <span class="my-1 ">Macaron</span>
+			  <span class="my-1 font-bold text-gray-900">Macaron Mix of Five</span>
+			  <span class="text-orange-600">
+					<strong>$8.00</strong>
+			  </span>
+		</div>	
 	 </div>
 
 	<div class="desert-menu-item flex flex-col" > 
+		
+		 
 		 <img src="./images/image-tiramisu-mobile.jpg" alt="Classic Tiramisu"/>
-		  <span>Classic Tiramisu</span>
-		  <span>Tiramisu</span>
-		  <span class="text-orange-600">
-			<strong>$5.50</strong>
-		  </span>
-				<button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		 
+		 
+		 <button class="add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		</button> 
+		 
+		<div class="flex flex-col my-3"> 
+			 <span class="my-1 ">Tiramisu</span> 
+			 <span class="my-1 font-bold text-gray-900">Classic Tiramisu</span>
+			  <span class="text-orange-600">
+				<strong>$5.50</strong>
+			  </span>
+		 </div> 		
+		 
 	  </div>
 	  
 	  
 	<div class="desert-menu-item flex flex-col"> 
 		  <img src="./images/image-baklava-mobile.jpg" alt="Pistachio Baklava"/>
-		  <span>Pistachio Baklava</span>
-		  <span>Baklava</span>
-		  <span class="text-orange-600">
-					<strong>$4.00</strong>
-		  </span>
-		   
-				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		  
+		  <button class=" add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		 </button>
+		  
+		 
+		<div class="flex flex-col my-3">
+				 <span class="my-1">Baklava</span>
+				  <span class="my-1 font-bold text-gray-900 ">Pistachio Baklava</span>
+				  
+				  <span class="text-orange-600">
+							<strong>$4.00</strong>
+				  </span>
+		</div>   
+				
 	 </div>
 
 
 	<div class="desert-menu-item flex flex-col"> 
 		 <img src="./images/image-meringue-mobile.jpg" alt=""/>
-		  <span>Lemon Meringue Pie</span>
-		  <span>Pie</span>
+		 
+		 <button class="add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		</button>
+		
+		<div class="flex flex-col my-3">
+		  <span class="my-1"> Pie</span>
+		  <span class="my-1 font-bold text-gray-900 ">Lemon Meringue Pie</span>
 		  <span class="text-orange-600">
 				<strong>$5.00</strong>
 		  </span>
+		</div>
 		
-				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+			
    </div>
 
 	<div class="desert-menu-item flex flex-col"> 
 		 <img src="./images/image-cake-mobile.jpg" alt="Red Velvet Cake"/>
-		  <span>Red Velvet Cake</span>
-		  <span>Cake</span>
-		  <span class="text-orange-600">
-		   <strong>$4.50</strong>
-		  </span>
+		 <button class="add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+			  </button>
+			  
+			  
+			<div class="flex flex-col my-3">
+				  <span class="my-1"> Cake</span>
+				  <span class="my-1 font-bold text-gray-900 ">Red Velvet Cake</span>
+				  <span class="text-orange-600">
+				   <strong>$4.50</strong>
+				  </span>
+			</div>
 		
-				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
 		  </div>
 
 	<div class="desert-menu-item flex flex-col"> 
-		  <img src="./images/image-macaron-mobile.jpg" alt="Salted Caramel Brownie"/>
-		  <span>Salted Caramel Brownie</span>
-		  <span>Brownie</span>
-		  <span class="text-orange-600">
-			<strong>$4.50</strong>
-		 </span>
-				  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		  <img src="./images/image-brownie-mobile.jpg" alt="Salted Caramel Brownie"/>
+		  
+		  <button class=" add-to-cart-btn inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		 </button>
+		 
+		<div class="flex flex-col my-3">
+			  <span class="my-1">Salted Caramel Brownie</span>
+			  <span class="my-1 font-bold text-gray-900 ">Brownie</span>
+			  <span class="text-orange-600">
+				<strong>$4.50</strong>
+			 </span>
+		</div>
+
 	 </div>
 
 	<div class="desert-menu-item flex flex-col"> 
 		 <img src="./images/image-panna-cotta-mobile.jpg" alt="Vanilla Panna Cotta"/>
-		  <span>Vanilla Panna Cotta</span>
-		  <span>Panna Cotta</span>
+		 
+		 <button class="add-to-cart-btn  inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+				Add to Cart
+		</button>
+			  
+	   <div class="flex flex-col my-3">
+		  <span class="my-1"> Panna Cotta</span>
+		  <span class="my-1 font-bold text-gray-900 ">Vanilla Panna Cotta</span>
+		  
 		  <span class="text-orange-600">
 				<strong>$6.50</strong>
 		  </span>
-		  <button class=" inline-flex px-3 py-1 w-36 h-8 bg-blue-200 rounded-full">
-				  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-					Add to Cart
-				  </button>
+		</div >
 	  </div>
 
 </div>
 
+<br/>
 
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
+
+<div id="cart" class="my-2 w-5/6 mx-4 bg-slate-50 py-1 px-1 flex flex-col">
+	  <span  class="self-start font-extrabold text-3xl text-orange-600" >Your Cart (0)</span>
+	  <img src="./images/illustration-empty-cart.svg" class="self-auto" alt="empty cart"/>
+	  <span class="font-semibold text-center my-2">Your added items will appear here</span>
+	  
+
+</div>
+
+
+
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Stefan Mitchell</a>.
   </div>
+  
+  
 </body>
 </html>
