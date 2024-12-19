@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="./index.css">
+  <link rel="stylesheet" type="text/css" href="./extras.css">
   
   <title>Frontend Mentor | Product list with cart</title>
 
@@ -21,30 +22,34 @@
 </head>
 <body class="p-3">
 
- <style>
- .desert-menu-item{ margin-top:20px; margin-bottom:20px;}
- @media screen and (max-width:640px){
-	.add-to-cart-btn{
-		transform:translateX(100px) translateY(-20px);
-	
-	}
- }
- 
- </style>
-
  <h1 class="text-3xl text-center mb-3 mt-3 font-bold">Desserts</h1>
  
 <div id="desert-menu" class="flex items-center justify-center flex-col">
 
 
   
-	 <div class="desert-menu-item flex flex-col"> 
-		 
-		<img src="./images/image-waffle-mobile.jpg" class="my-2" alt="Waffle with Berries"/>
-		 <button class="add-to-cart-btn inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
-			  <img class="" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
-				Add to Cart
-		</button>
+	 <div class="desert-menu-item flex flex-col "> 
+		
+		<div  class=" desert-frame flex flex-col items-center justify-center"> 
+			<img src="./images/image-waffle-mobile.jpg" class="my-2" alt="Waffle with Berries"/>
+			
+			
+				 <button class="add-to-cart-btn-empty inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+					 
+					
+					
+					<img class="trolley-ioon" alt="add to cart" src="./images/icon-add-to-cart.svg"/>
+						Add to Cart
+					
+				</button>
+				
+				
+			<button class="add-to-cart-btn inline-flex border-2 border-zinc-500 border-solid px-3 -ml-1 py-1 w-36 h-9 bg-blue-200 rounded-full">
+			<img class="qty-controls" alt="click to decrease quantity" src="./images/icon-decrement-quantity.svg"/>
+			<img alt="click to increase quantity" class="qty-controls"  src="./images/icon-increment-quantity.svg"/>
+			</button>	
+				
+		  </div>
 			  
 			  
 		<div class="flex flex-col my-3"> 
