@@ -2,6 +2,7 @@
 .desert-frame{
 	padding:0;
 	margin:0;
+	border-radius:5px;
 }
 	
  @media screen and (max-width:640px){
@@ -30,7 +31,11 @@
 	 }
 	
 	.desert-frame:hover .add-to-cart-btn{
-	 display:inline-block
+	 display:inline-flex;
+	 align-items:center;
+	 justify-content:space-around;
+	
+	 
 	 }
 	 
 	
