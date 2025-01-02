@@ -40,7 +40,7 @@ let cartcounter=document.querySelector("#cart-counter");
 
 //btns to increase qty of items to trolley	
 for(let x=0;x<counterqtys.length;x++){
-	
+	counters[x].id=`counter-btn-${x}`;
 	incrementbtns[x].id=`increment-btn-${x}`;
 	decrementbtns[x].id=`decrement-btn-${x}`;
 	addTocartbtns[x].id=`add-to-cart-btn-${x}`;
@@ -48,14 +48,15 @@ for(let x=0;x<counterqtys.length;x++){
 	
 	
     addTocartbtns[x].addEventListener("click",()=>{
-		
-		CART.addItem(names[x].textContent,menuitems[x].id,prices[x].textContent)
+		let price=prices[x].textContent.slice(1,);
+		CART.addItem(names[x].textContent,menuitems[x].id,price)
 		addTocartbtns[x].style.display="none";
 		counters[x].style.display="inline-flex";
 		counters[x].style.margin="0 auto 0 auto";
 		counters[x].style.transform="translateY(-20px)";
 		counters[x].style.alignItems="center";
 		counters[x].style.justifyContent="center";
+		console.log("totalitems:",CART.getTotalItems())
 		})
 	
 	
@@ -65,16 +66,51 @@ for(let x=0;x<counterqtys.length;x++){
 		 
 			let newval=parseInt(counterqtys[x].textContent)+1;
 			counterqtys[x].textContent=newval.toString();
+			let item=CART.findItem(x.toString());
+			
+			//console.log("your item:",item)
+			//console.log("your id:",x)
+			
+			//#update cart Array and cart item in trolley
+			if (item){
+				item.qty=parseInt(counterqtys[item.id].textContent);
+				console.log(CART.showContents());
+				
+				let item_id=`#cart-item-${item.id}`;
+				let cartItem=document.querySelector(item_id);
+				let item_summary=document.querySelector(`#summary-item-${item.id}`)
+				item_summary.textContent=`${item.qty}x @${item.price} ${(item.price*item.qty).toString()}`;
+				CART.increaseTotalItems()
+				console.log("totalitems:",CART.getTotalItems())
+			}
 			
 	});
 	
 	
 	//Function to decrease qty
 	decrementbtns[x].addEventListener("click",()=>{
-		if(parseInt(qtys[x].textContent)===0){return}
+		if(parseInt(counterqtys[x].textContent)===1){return}
 		let newval=parseInt(counterqtys[x].textContent)-1;
 		counterqtys[x].textContent=newval.toString();
 		
+		//console.log("your item:",item)
+			//console.log("your id:",x)
+			
+			//#update cart Array and cart item in trolley
+			let item=CART.findItem(x.toString());
+			
+			if (item){
+				item.qty=parseInt(counterqtys[item.id].textContent);
+				
+				
+				let item_id=`#cart-item-${item.id}`;
+				let cartItem=document.querySelector(item_id);
+				let currentprice=item.price*item.qty;
+				let item_summary=document.querySelector(`#summary-item-${item.id}`)
+				item_summary.textContent=`${item.qty}x @${item.price} ${(item.qty>1?currentprice-item.price:item.price).toString()}`;
+				CART.decreaseTotalItems();
+				console.log("totalitems:",CART.getTotalItems())
+			}
 	})
 	
 	
@@ -90,8 +126,9 @@ for(let x=0;x<counterqtys.length;x++){
 class shoppingCart{
 	
 	
-	constructor(cart,isActive=false){
+	constructor(cart,isActive=false,totalitems=0){
 		this.cart=cart;
+		this.totalitems=totalitems;
 	}
 	
 	
@@ -105,19 +142,83 @@ class shoppingCart{
 		}
 	}
 	
+	//updateItem and deleteItem(complete) functions needed^
 	
-	
-	findItem(id){
-		//search for item and return it if it exists
-	return(this.cart.find(ele=>ele.id===id))
+	//delete item from cart
+	deleteItem(id){
+		let updatedcart;
+		if(this.findItem(id)){
+			updatedcart=this.cart.filter(item=>item.id!=id);
+			this.decreaseTotalItems(this.findItem(id).qty)
+			this.removeCartMenuItem(id);
+			this.cart=[...updatedcart];
+			console.log(this.cart)
+			
+				
+		}
+		
+		
 	}
 	
 	
-	//function to add item to cart
+	//removes items from cart menu listing and resets buttons 
+	removeCartMenuItem(id){
+		
+		
+		let itmtodelete=document.querySelector(`#cart-item-${id}`);
+		let addtocartbtn=document.querySelector(`#add-to-cart-btn-${id}`);
+		let counter=document.querySelector(`#counter-btn-${id}`);
+		let countervalue=document.querySelector(`#counter-btn-${id} strong`);
+		cartmenu.removeChild(itmtodelete);
+		counter.style.display="none";
+		countervalue.textContent="1";
+		addtocartbtn.style.display="inline-flex";
+		addtocartbtn.style.margin="0 auto 0 auto";
+		addtocartbtn.style.transform="translateY(-20px)";
+		
+		
+	}
+	
+	
+	//adds new items to cart menu listing  
+	addCartMenuItem(item){
+		let cartmenu_div=document.createElement("div");
+		let itemName=document.createElement("span");
+		let summary=document.createElement("span");
+		let deletebtn=document.createElement("a");
+		let itemTotalPrice=item.qty*item.price;
+		console.log(itemTotalPrice);
+		itemName.textContent=item.name;
+		cartmenu_div.classList.add("cart-menu-item");
+		cartmenu_div.id=`cart-item-${item.id}`;
+		deletebtn.textContent="delete";
+		deletebtn.addEventListener("click",()=>this.deleteItem(item.id));
+		summary.id=`summary-item-${item.id}`;
+		summary.textContent=`${item.qty}x @${item.price} ${itemTotalPrice.toString()}`;
+		cartmenu_div.appendChild(itemName);
+		cartmenu_div.appendChild(deletebtn);
+		cartmenu_div.appendChild(summary);
+		cartmenu.appendChild(cartmenu_div);
+		
+	}
+	
+	findItem(id){
+		//search for item and return it if it exists
+		let cartitm= this.cart.find(ele=>ele.id===id);
+		if(!cartitm){
+			return false;
+		}else{
+		return cartitm;
+		}
+	}
+	
+	
+	//function to add item to a cart
 	
 	addItem(itemName,id,price){
 	
-		let newItem={id:id,name:itemName,price:price,qty:0};
+	
+		let newItem={id:id,name:itemName,price:parseFloat(price),qty:1};
 		//to be  completed
 		//add item to cart when empty
 			
@@ -126,10 +227,18 @@ class shoppingCart{
 				this.cart=[...this.cart,newItem];
 				this.setisActive(true);
 			    console.log(this.cart)
+				this.addCartMenuItem(newItem);
+				this.increaseTotalItems()
+				
+				
 			}else{
 				if(!this.findItem(id)){
 					this.cart=[...this.cart,newItem];
 					console.log(this.cart)
+					this.addCartMenuItem(newItem);
+					this.increaseTotalItems()
+					
+					
 				}
 				
 			}
@@ -149,14 +258,22 @@ class shoppingCart{
 			}
 		}
 		
+		//reveals contents of CART array
+		showContents(){
+			return(this.cart);
+		}
 	
+		increaseTotalItems(amt=1){
+			this.totalitems+=amt;
+		}
 	
-	
-	
-	//updateItem and deleteItem functions needed^
-
-
-	
+		decreaseTotalItems(amt=1){
+			this.totalitems-=amt;
+		}
+		
+		getTotalItems(){
+			return this.totalitems;
+		}
 
 }
 
