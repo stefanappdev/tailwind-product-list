@@ -12,13 +12,20 @@
 	
 	}
 	
-	.Hidden{
-		display:none;
+	.circle{
+		border-radius:50%;
+		height:20px;
+		width:20px;
+		border:2px solid gray;
+		transform:translate(300px,-15px);
 	}
 	
-	.Visible{
-		display:block;
-	}
+	.deletebtn{
+	 height:15px;
+	 width:15px;
+	}	
+	
+	
 	
 	.counter-btn{
 		margin:0 auto 0 auto;
@@ -54,7 +61,11 @@
 		display:flex;
 		flex-direction:column;
 		border-bottom: 1px solid black;
-		background-color: rgb(14,116,144);
+		background-color: rgb(248 250 252);
 	} 
+	
+	.cart-menu-item > .itemname{
+		font-weight:bold;
+	}
 	
  }
